@@ -33,7 +33,6 @@ view_df(TNSS2015,
         show.wtd.prc = T # 顯示加權後的百分比
 )
 
-
 ## 檢視資料檔中無效值的比例
 library(sjmisc)
 load("../tscs2013.rda") 
