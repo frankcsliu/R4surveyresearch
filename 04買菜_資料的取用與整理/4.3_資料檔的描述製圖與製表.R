@@ -22,15 +22,16 @@ view_df(TNSS2015,
         )
 
 ## 補充盒子：製作加權之後的資料報表 
-# library(sjPlot)
-# view_df(TNSS2015,
-#         file="TNSS2015tab2.html",  # 結果直接另存新檔
-#         show.na = T, # 顯示無效值（拒答）個數
-#         show.frq = T, # 顯示次數
-#         show.prc = T # 顯示百分比
-#         weight.by = TNSS2015$w, # 使用加權值
-#         show.wtd.frq = T, # 顯示加權後的次數
-#         show.wtd.prc = T # 顯示加權後的百分比 
+library(sjPlot)
+view_df(TNSS2015,
+        file="TNSS2015tab2.html",  # 結果直接另存新檔
+        show.na = T, # 顯示無效值（拒答）個數
+        show.frq = T, # 顯示次數
+        show.prc = T, # 顯示百分比
+        weight.by = w, # 使用加權值
+        show.wtd.frq = T, # 顯示加權後的次數
+        show.wtd.prc = T # 顯示加權後的百分比
+)
 
 ## 檢視資料檔中無效值的比例
 library(sjmisc)
