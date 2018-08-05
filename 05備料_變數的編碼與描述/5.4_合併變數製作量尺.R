@@ -40,7 +40,7 @@ table(kao06$newspaper, exclude = NULL)
 # 方法一：以apply()製作量尺
 attach(kao06) #資料檔鎖定（參見4.2）
 tmp <- cbind(tv,radio,internet,newspaper)
-kao06$mediaAtt <- apply(tmp,1,sum)  #依列(1)橫向加總（sum）
+kao06$mediaAtt <- apply(tmp,1,sum)  #依列(1)橫向加總（sum）；等同於 kao06$mediaAtt <- rowSums(tmp)
 table(kao06$mediaAtt) #0~22
 detach(kao06) 
 
