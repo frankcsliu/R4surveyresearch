@@ -21,7 +21,7 @@ tscs2013$v73r <- set_labels(tscs2013$v73r, labels=c("不贊成","贊成"))
 
 # 看次數分配表
 library(sjPlot)
-sjt.frq(tscs2013$v73r)
+sjt.frq(tscs2013$v73r, encoding="big5")
 
 # 將含新變數的資料物件另存到專案夾中
 save(tscs2013, file="tscs2013.rda") #建議使用新的檔名
@@ -47,10 +47,10 @@ CrossTable(tscs2013$v73r,　tscs2013$sex,　
 
 #方法三：以sjPlot::sjt.xtab()做交叉分析及製表
 library(sjPlot)
-sjt.xtab(tscs2013$v73r,　tscs2013$sex)
+sjt.xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8")
 
 library(sjPlot)
-sjt.xtab(tscs2013$v73r,　tscs2013$sex, 
+sjt.xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8", 
          show.row.prc = TRUE, # 顯示列百分比
          show.col.prc = TRUE, # 顯示欄百分比
          show.na = FALSE, # 不顯示無效值（預設）

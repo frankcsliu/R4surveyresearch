@@ -18,7 +18,8 @@ view_df(TNSS2015,
         file="TNSS2015tab.html",  # 結果直接另存新檔
         show.na = T, # 顯示未重新編碼前的無效值個數
         show.frq = T, # 顯示次數
-        show.prc = T # 顯示百分比 
+        show.prc = T, # 顯示百分比 
+        encoding = "big5"
         )
 
 ## 補充盒子：製作加權之後的資料報表 

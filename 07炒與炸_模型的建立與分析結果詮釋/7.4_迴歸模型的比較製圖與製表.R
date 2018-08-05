@@ -68,6 +68,7 @@ sjt.glm(md03,
         show.aic = TRUE, # 顯示AIC 
         show.loglik = TRUE, # 顯示 -2*Log-Likelihood
         show.r2 = TRUE, # 顯示 (pseudo) R-square
+        p.numeric=F, #切換為以星號表示顯著程度
         
         # 設定小數點的位數
         digits.est=3,   

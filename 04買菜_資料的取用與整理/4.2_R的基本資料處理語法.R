@@ -18,7 +18,7 @@ wgc <- read.csv("http://www2.nsysu.edu.tw/politics/liu/teaching/dataAnalysis/dat
 
 ## 讀取IBM SPSS的sav檔案
 # 方法一：使用`sjlabelled::read_spss()`讀取sav檔案
-library(sjmisc)
+library(sjlabelled)
 tscs2013 <- read_spss("../tscs2013q2.sav")  
 
 #參考盒子：關於使用`sjlabelled::read_spss()`讀入big-5編碼的中文資料檔
