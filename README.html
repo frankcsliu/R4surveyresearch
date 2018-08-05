@@ -340,10 +340,11 @@ $(document).ready(function () {
 </div>
 <div class="section level2">
 <h2>聯絡</h2>
-<p>本書若有任何錯誤，或您有指正、建議，歡迎您聯絡: <a href="lawmen833@gmail.com" class="uri">lawmen833@gmail.com</a> 。持續更新中的勘誤及補充將表列於下。</p>
+<p>本書若有任何錯誤，或您有指正、建議，歡迎您聯絡: <a href="lawmen833@gmail.com" class="uri">lawmen833@gmail.com</a> 。</p>
 </div>
 <div class="section level2">
 <h2>勘誤及補充</h2>
+<p>此處為作者持續匯整、更新中的勘誤及補充。</p>
 <table>
 <colgroup>
 <col width="21%"></col>
@@ -409,10 +410,22 @@ $(document).ready(function () {
 <td><code>descr(tscs2013$v65r)</code></td>
 </tr>
 <tr class="odd">
+<td>5.3.2</td>
+<td>p.132</td>
+<td><code>kao06$mediaAtt &lt;- apply(tmp,1,sum)</code></td>
+<td>此行新增註解：<code>等同於 kao06$mediaAtt &lt;- rowSums(tmp)</code></td>
+</tr>
+<tr class="even">
 <td>5.4.1</td>
 <td>p.133</td>
 <td><code>kao06$mediaAtt &lt;- row_sums(kao06,tv, radio, internet, newspaper, na.rm=T) table(kao06$mediaAtt)</code></td>
 <td><code>library(dplyr) kao06 &lt;- row_sums(kao06, tv, radio, internet, newspaper, na.rm = T, append = T) table(kao06$rowsums)</code></td>
+</tr>
+<tr class="odd">
+<td>5.4.1</td>
+<td>p.137</td>
+<td><code>tmp.nona &lt;- na.omit(tmp)</code></td>
+<td>此行之後新增一行註解：<code># install.packages(&quot;GPArotation&quot;)</code></td>
 </tr>
 <tr class="even">
 <td>6.1</td>
