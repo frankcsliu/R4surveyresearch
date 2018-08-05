@@ -20,8 +20,8 @@
 ## 聯絡  
 本書若有任何錯誤，或您有指正、建議，歡迎您聯絡: [lawmen833@gmail.com](lawmen833@gmail.com) 
 
-## 勘誤表
-|章節|頁碼|原文|更正為|
+## 勘誤及補充
+|章節|頁碼|原文|修改|
 |----|----|----|-------|
 |4.2.2 | p.81 | `dat<- read_excel("xlssample.xls")` | `dat<- read_excel("../xlssample.xls")` | 
 |4.2.2 | p.81 | `dat<- read.xlsx("xlssample.xls")` | `dat<- read.xlsx("../xlssample.xls")` | 
@@ -33,6 +33,6 @@
 |5.4.1 | p.133 | `kao06$mediaAtt <- row_sums(kao06,tv, radio, internet, newspaper, na.rm=T) table(kao06$mediaAtt)` | `library(dplyr) kao06 <- row_sums(kao06, tv, radio, internet, newspaper, na.rm = T, append = T) table(kao06$rowsums)`| 
 |6.1| p.140 | `sjt.frq(tscs2013$73r)`| `sjt.frq(tscs2013$v73r, encoding="big5")` |
 |6.1.1|p.146| `sjt.xtab(tscs2013$v73r,　tscs2013$sex)`|`sjt.xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8")`|
-|7.4| p.242 | | `sjt.glm()` 加入參數 `p.numeric=F, #切換為以星號表示顯著程度` |
+|7.4| p.242 | | `sjt.glm()` 加入 `p.numeric=F, #切換為以星號表示顯著程度` |
 |8.2.2| P.288 | `id15 <- read_spss("../Total.sav", option="foreign", enc = "big5", attach.var.labels = T)` | 簡化為 `id15 <- read_spss("../Total.sav", enc = "big5")` |
 |8.5.6 | p.348 | #581 | #629 | 
