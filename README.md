@@ -1,7 +1,13 @@
 # R4surveyresearch
 
 ## 歡迎  
-《民意調查資料分析的R實戰手冊》於2018年8月[由五南出版](http://www.wunan.com.tw/bookdetail.asp?no=13929)。此處提供該書所附的最新語法檔及資料檔。開始前請先為這些練習語法及資料檔找到一個存放的家（專案資料夾，詳見3.1的第一步）。接下來將由此下載的zip檔解壓縮，把裡頭的檔案全放進這個新開的專案資料夾內，就可以開始使用各章節的語法檔進行實作了。
+《民意調查資料分析的R實戰手冊》於2018年8月[由五南出版](http://www.wunan.com.tw/bookdetail.asp?no=13929)。此處提供該書所附的最新語法檔及資料檔。按右上角的clone and download綠色按鈕就可以下載。
+
+使用這些語法檔（.R）時請注意：若你看到語法檔中的資料路徑"../"，它表示的是「相對路徑中的上一層目錄」的意思。詳見3.1.1 (p.42-44)。若你發現專案都設定好了，但仍無法正確讀取資料檔，有兩個解決方法：
+
+- 一是將語法檔中的相對路徑改為絕對路徑（例如"D:/Document/R語法檔及資料檔/BBQ.csv"）。在Windows中取得檔案所在位置的絕對路徑的做法，是在資料檔上按右鍵-內容，就找到該檔案的路徑。請注意：複製、貼上絕對路徑到語法檔的時候，路徑所使用的是斜線（`/`）而不是反斜線（`\`）。 
+
+- 二是是將工作路徑設定好。做法是（1）在右下角檔案總管區，切換到語法案所在資料夾；（2）到Files標籤工具列中按下齒輪（More）圖示，點選"Set as Working Directory"）。
 
 ## 本書特色  
 - 本書主要針對人文社科學子，以及有興趣以R分析民意調查資料的學習者所打造。以多種民意調查進行資料分析實作，包含大型面訪調查資料、電話調查資料及網路調查資料，從資料描述到報表輸出，都能用R輕鬆完成。
@@ -15,12 +21,18 @@
 本書若有任何錯誤，或您有指正、建議，歡迎您聯絡: [lawmen833@gmail.com](lawmen833@gmail.com) 
 
 ## 勘誤表
-
 |章節|頁碼|原文|更正為|
 |----|----|----|-------|
+|4.2.2 | p.81 | `dat<- read_excel("xlssample.xls")` | `dat<- read_excel("../xlssample.xls")` | 
+|4.2.2 | p.81 | `dat<- read.xlsx("xlssample.xls")` | `dat<- read.xlsx("../xlssample.xls")` | 
+|4.3.2 | p.91 | `show.prc=T,` | `show.prc=T, encoding="big5"`|
+|4.3.2 | p.91 | `weight.by = TNSS2015$w,` | `weight.by = w,`|
+|5.1.3 | p.99 | `sjPlot::sjt.frq()` | `sjmisc::frq()` |
 |5.3.1 | p.123 | `describe(tscs2013$age)` | `describe(tscs2013$v65r)`  |
 |5.3.1 | p.123 | `descr(tscs2013$age)`  | `descr(tscs2013$v65r)`  |
 |5.4.1 | p.133 | `kao06$mediaAtt <- row_sums(kao06,tv, radio, internet, newspaper, na.rm=T) table(kao06$mediaAtt)` | `library(dplyr) kao06 <- row_sums(kao06, tv, radio, internet, newspaper, na.rm = T, append = T) table(kao06$rowsums)`| 
+|6.1| p.140 | `sjt.frq(tscs2013$73r)`| `sjt.frq(tscs2013$v73r, encoding="big5")` |
+|6.1.1|p.146| `sjt.xtab(tscs2013$v73r,　tscs2013$sex)`|`sjt.xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8")`|
+|7.4| p.242 | | `sjt.glm()` 加入參數 `p.numeric=F, #切換為以星號表示顯著程度` |
 |8.2.2| P.288 | `id15 <- read_spss("../Total.sav", option="foreign", enc = "big5", attach.var.labels = T)` | 簡化為 `id15 <- read_spss("../Total.sav", enc = "big5")` |
 |8.5.6 | p.348 | #581 | #629 | 
-
