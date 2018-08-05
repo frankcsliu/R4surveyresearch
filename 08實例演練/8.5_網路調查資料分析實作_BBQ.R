@@ -210,7 +210,7 @@ library(factoextra)
 bbqMCA <- select(bbq, V44r, V18r, V20r, V21r, V23r, V27r, V45r, V48r, 
                  V2r, V3r, V24r, V49r, V50r, V37r)
 bbqMCA.nona <- na.omit(bbqMCA)
-nrow(bbqMCA.nona) #581
+nrow(bbqMCA.nona) # 629
 names(bbqMCA.nona)
 res<-MCA(bbqMCA.nona, ncp=5, graph= F) 
 fviz_screeplot(res, ncp=10) 
