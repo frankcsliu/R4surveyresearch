@@ -13,3 +13,15 @@
 
 ## 聯絡  
 本書若有任何錯誤，或您有指正、建議，歡迎您聯絡: [lawmen833@gmail.com](lawmen833@gmail.com) 
+
+## 勘誤表
+
+章節|頁碼|原文|更正為
+----|----|----|-------
+5.3.1 | p.123 | `describe(tscs2013$age)` | `describe(tscs2013$v65r)`  
+5.3.1 | p.123 | `descr(tscs2013$age)`  | `descr(tscs2013$v65r)` 
+5.4.1 | p.133 | `kao06$mediaAtt <- row_sums(kao06,tv, radio, internet, newspaper,
+na.rm=T) table(kao06$mediaAtt)` | `library(dplyr) kao06 <- row_sums(kao06, tv, radio, internet, newspaper, na.rm = T, append = T) table(kao06$rowsums)`
+8.2.2| P.288 | `id15 <- read_spss("../Total.sav", option="foreign", enc = "big5", attach.var.labels = T)` | 簡化為 `id15 <- read_spss("../Total.sav", enc = "big5")`
+8.5.6 | p.348 | #581 | #629
+
