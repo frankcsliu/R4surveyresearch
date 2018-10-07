@@ -24,10 +24,11 @@
 本書若有任何錯誤，或您有指正、建議，歡迎您聯絡: [lawmen833@gmail.com](lawmen833@gmail.com) 。
 
 ## 勘誤及補充
-此處為作者持續匯整、更新中的勘誤及補充。相關的語法檔案皆已經依照此表更新。
+此處為作者持續匯整、更新中的勘誤或補充。相關的語法檔案皆已經依照此表更新。
 
 |章節|頁碼|原文|修改|
 |----|----|----|-------|
+|4.2.3 補充盒子4.2 | p.84 | ”Home目錄下”|　”專案目錄下”　|
 |4.2.2 | p.81 | `dat<- read_excel("xlssample.xls")` | `dat<- read_excel("../xlssample.xls")` | 
 |4.2.2 | p.81 | `dat<- read.xlsx("xlssample.xls")` | `dat<- read.xlsx("../xlssample.xls")` |
 |4.3.1 | p.89 |`load("../TNSS2015.rda") str(TNSS2015, list.len=5)`|`library(sjlabelled) TNSS2015 <- read_spss("../TNSS2015.sav", enc="big5") save(TNSS2015,file= "../TNSS2015.rda") str(TNSS2015, list.len=5)` |
