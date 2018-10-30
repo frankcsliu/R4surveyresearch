@@ -35,7 +35,7 @@
 |4.3.2 | p.91 | `show.prc=T,` | `show.prc=T, encoding="big5"`|
 |4.3.2 | p.91 | `weight.by = TNSS2015$w,` | `weight.by = w,`|
 |5.1.3 | p.99 | `sjPlot::sjt.frq()` | `sjmisc::frq()` |
-|5.1.3 | p.100 | `sjt.frq(` | `sjmisc::frq(` |
+|5.1.3 | p.100 | `sjt.frq()` | 套件更新後成為 `sjmisc::frq()` |
 |5.3.1 | p.123 | `describe(tscs2013$age)` | `describe(tscs2013$v65r)`  |
 |5.3.1 | p.123 | `descr(tscs2013$age)`  | `descr(tscs2013$v65r)`  |
 |5.3.2 | p.132 |`kao06$mediaAtt <- apply(tmp,1,sum)`| 此行新增註解：`等同於 kao06$mediaAtt <- rowSums(tmp)`|
