@@ -39,12 +39,12 @@ tscs2013 <- set_na(tscs2013, na=c(93:99, "NA"))
 #                       select(tscs2013, v2y)) 
 
 ## 第三階段：變數編碼
-library(sjPlot)
+library(sjmisc)
 # 1、性別：
 # (01)男      (02)女
 table(tscs2013$v1)
 tscs2013$sex <- rec(tscs2013$v1, rec="1=1[男]; 2=0[女]", as.num = F)  #在編碼後方加上[]可直接給上選項數值的籤籤 
-sjt.frq(tscs2013$sex, weight.by = tscs2013$wr) # 加上權數後直接製作出帶標籤的次數分配表
+frq(tscs2013$sex, weight.by = tscs2013$wr) # 加上權數後直接製作出帶標籤的次數分配表
 
 # 2. 出生的民國年是v2y，age=(102-tscs2013$v2y)
 tscs2013$age <- 102-tscs2013$v2y
@@ -57,9 +57,10 @@ tscs2013$generation[tscs2013$age<=(2015-1954) & tscs2013$age>=(2015-1968)] <- 3
 tscs2013$generation[tscs2013$age<=(2015-1969) & tscs2013$age>=(2015-1978)] <- 4
 tscs2013$generation[tscs2013$age<=(2015-1979) & tscs2013$age>=(2015-1988)] <- 5
 tscs2013$generation[tscs2013$age<=(2015-1989)] <- 6  
-table(tscs2013$generation) # 沒有第二世代的受訪者
- #  1   3   4   5   6 
- # 27 562 375 359 280 
+table(tscs2013$generation)
+ #  1   2   3   4   5   6 
+ # 27 349 562 375 359 280 
+
 
 # 為每個世代作虛擬變數
 tscs2013$gen.1 <- ifelse(tscs2013$generation==1,1,0) 
