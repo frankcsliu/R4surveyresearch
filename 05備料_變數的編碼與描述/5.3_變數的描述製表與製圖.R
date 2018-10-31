@@ -15,10 +15,8 @@ CrossTable(tscs2013$v65)
 # sjmisc::frq()
 library(sjmisc)
 frq(tscs2013$v65)
-# frq(tscs2013$v65, weight.by = tscs2013$wr)  #加權
+frq(tscs2013$v65, weights = tscs2013$wr) 
 
-# sjPlot::sjt.frq()
-library(sjPlot) 
 
 ## 清除無效值、重新編碼、排序及上標籤
 tscs2013$v65r <- rec(tscs2013$v65, 
@@ -30,7 +28,7 @@ tscs2013$v65r <- rec(tscs2013$v65r, rec="rev",
                                     "not very serious (2)", 
                                     "serious (3)", 
                                     "very serious (4)"))
-sjt.frq(tscs2013$v65r, weight.by = tscs2013$wr) 
+frq(tscs2013$v65r, weights = tscs2013$wr) 
 
 # psych::describe()
 library(psych)
