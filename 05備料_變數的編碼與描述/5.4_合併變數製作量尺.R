@@ -46,12 +46,12 @@ detach(kao06)
 
 
 ## 方法二：以sjmisc::row_sums()製作量尺
-# library(sjmisc)
-# library(dplyr)
-# kao06 <- row_sums(kao06, tv, radio, internet, newspaper, 
-#                   na.rm = T, append = T)
-# names(kao06)
-# table(kao06$rowsums, exclude = NULL)
+library(sjmisc)
+library(dplyr)
+kao06 <- row_sums(kao06, tv, radio, internet, newspaper, n=4) #只有這4題都有答的受訪者才會被加總
+?row_sums
+names(kao06)
+table(kao06$rowsums, exclude = NULL)
 
 ## 查看加總的結果
 head(select(kao06, tv, radio, internet, newspaper, mediaAtt), 10) #看資料檔最前10列
