@@ -20,8 +20,8 @@ tscs2013$v73r <- set_label(tscs2013$v73r,
 tscs2013$v73r <- set_labels(tscs2013$v73r, labels=c("不贊成","贊成"))
 
 # 看次數分配表
-library(sjPlot)
-sjt.frq(tscs2013$v73r, encoding="big5")
+library(sjmisc)
+frq(tscs2013$v73r)
 
 # 將含新變數的資料物件另存到專案夾中
 save(tscs2013, file="tscs2013.rda") #建議使用新的檔名
