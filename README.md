@@ -48,7 +48,7 @@
 |5.4.1 | p.137 |`tmp.nona <- na.omit(tmp)`| 此行之後新增一行註解：` # install.packages("GPArotation")`| 
 |6.1| p.140 | `sjt.frq(tscs2013$73r)`| `frq(tscs2013$v73r)` | 
 |6.1.1|p.146| `sjt.xtab(tscs2013$v73r,　tscs2013$sex)`|`sjt.xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8")`|
-|7.4| p.242 | | `sjt.glm()` 加入 `p.numeric=F, #切換為以星號表示顯著程度` |
+|7.4 | p.242-244 | `sjPlot::sjt.glm()`| `sjPlot::tab_model()` 因參數群在指令變更後出現大幅變動，請直接下載本節更新後的語法檔或使用`?tab_model`進行新舊參數對照 |
 |8.2.2| P.288 | `id15 <- read_spss("../Total.sav", option="foreign", enc = "big5", attach.var.labels = T)` | 簡化為 `id15 <- read_spss("../Total.sav", enc = "big5")` |
 |8.5.6 | p.348 | #581 | #629 | 
 |8.5.8 | p.353 | 語法框中的註記文字假設應修正與p.349的內容一致| # 初步假設：覺得自己時間充裕的人(V37r=0)，愈可能傾向見面團聚取代使用手機（V45r=1）；相反的，自覺一天內時間不足的人，反而傾向以手機來取代見面團聚。|
