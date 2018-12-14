@@ -39,6 +39,7 @@
 |5.1.3 | p.101 | `sjt.frq(tscs2013$v15r)` | `frq(tscs2013$v15r)` | 
 |5.1.3 | p.102 | `with(tscs2013, sjt.frq(v31a))` | `with(tscs2013, frq(v31a))` | 
 |5.1.3 | p.106 | `sjt.frq(tscs2013$v67r)` | `frq(tscs2013$v67r)` | 
+|5.2.2 | p.116 |`bbq <- read.csv("../BBQ.csv", header = F)` | 補充：替代做法1: `bbq <- readr::read_csv("../BBQ.csv", col_names=F)` ；替代做法2：參考8.5（頁329）直接為變數命名 |
 |5.3.1 | p.120 | `sjPlot::sjt.frq()` | `sjmisc::frq(out = "v") ` |
 |5.3.1 | p.122 | `frq(tscs2013$v65, weight.by = tscs2013$wr) ` | `frq(tscs2013$v65, weights = tscs2013$wr)  ` |
 |5.3.1 | p.123 | `describe(tscs2013$age)` | `describe(tscs2013$v65r)`  |
