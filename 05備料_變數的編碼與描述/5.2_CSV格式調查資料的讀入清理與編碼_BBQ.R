@@ -65,7 +65,11 @@ bbq <- read.csv("../BBQ.csv", header = T)
 varlabels <- colnames(bbq) 
 
 # 再以取出的所有欄位名稱，植入同一資料檔中當作變數標籤。
-bbq <- read.csv("../BBQ.csv", header = F)  
+bbq <- read.csv("../BBQ.csv", header = F)   # 變數名稱會變為V1, V2, ...
+# 替代做法1
+# bbq <- readr::read_csv("../BBQ.csv", col_names=F) # 變數名稱變為X1, X2, ... 
+# 替代做法2：參考8.5（頁329）直接為變數命名
+
 library(sjlabelled)
 bbq <- bbq[-1,]   　# 移除第一列
 set_label(bbq) <- varlabels 
