@@ -40,10 +40,12 @@
 |5.1.3 | p.102 | `with(tscs2013, sjt.frq(v31a))` | `with(tscs2013, frq(v31a))` | 
 |5.1.3 | p.106 | `sjt.frq(tscs2013$v67r)` | `frq(tscs2013$v67r)` | 
 |5.2.2 | p.116 |`bbq <- read.csv("../BBQ.csv", header = F)` | 補充：替代做法1: `bbq <- readr::read_csv("../BBQ.csv", col_names=F)` ；替代做法2：參考8.5（頁329）直接為變數命名 |
-|5.3.1 | p.120 | `sjPlot::sjt.frq()` | `sjmisc::frq(out = "v") ` |
+|5.2.4 | p.119 | `sjPlot::sjt.frq()` | `sjmisc::frq(out = "v") ` |
+|5.3.1 | p.120 | `sjPlot::sjt.frq()` | `sjmisc::frq(out = "v") ` | 
 |5.3.1 | p.122 | `frq(tscs2013$v65, weight.by = tscs2013$wr) ` | `frq(tscs2013$v65, weights = tscs2013$wr)  ` |
 |5.3.1 | p.123 | `describe(tscs2013$age)` | `describe(tscs2013$v65r)`  |
 |5.3.1 | p.123 | `descr(tscs2013$age)`  | `descr(tscs2013$v65r)`  |
+|5.3.2 | p.124 |`sjp.frq()`| `plot_frq()`|
 |5.3.2 | p.132 |`kao06$mediaAtt <- apply(tmp,1,sum)`| 此行新增註解：`等同於 kao06$mediaAtt <- rowSums(tmp)`|
 |5.4.1 | p.133 | `kao06$mediaAtt <- row_sums(kao06,tv, radio, internet, newspaper, na.rm=T) table(kao06$mediaAtt)` | `library(dplyr) kao06 <- row_sums(kao06, tv, radio, internet, newspaper, n=4) table(kao06$rowsums)`| 
 |5.4.1 | p.137 |`tmp.nona <- na.omit(tmp)`| 此行之後新增一行註解：` # install.packages("GPArotation")`| 
