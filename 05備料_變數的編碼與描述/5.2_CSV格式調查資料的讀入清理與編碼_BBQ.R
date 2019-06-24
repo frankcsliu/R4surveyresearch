@@ -93,9 +93,9 @@ table(bbq$V2, exclude=NULL) #次數分配表把無效值報出來
 library(gmodels)
 CrossTable(bbq$V2)
 
-library(sjPlot)
-sjt.frq(bbq$V2)  #若表格標題中文變成了亂碼，試試加上這個參數：encoding="big5"
-sjp.frq(bbq$V2)
+library(sjmisc)
+frq(bbq$V2)  #若表格標題中文變成了亂碼，試試加上這個參數：encoding="big5"
+frq(bbq$V2)
 
 ## 儲存檔案
 save(bbq, file="BBQ.rda")

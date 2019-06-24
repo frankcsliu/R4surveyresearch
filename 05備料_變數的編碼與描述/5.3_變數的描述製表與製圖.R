@@ -37,12 +37,11 @@ describe(tscs2013$age)
 # sjmisc::decr()
 library(sjmisc)
 descr(tscs2013$age) 
-```
 
 ## 使用sjPlot為單一變數製圖
 library(sjPlot)
 sjmisc::frq(tscs2013$v65r)
-sjp.frq(tscs2013$v65r, 
+plot_frq(tscs2013$v65r, 
         weight.by = tscs2013$wr, wrap.title=30)
 
 ## 使用sjPlot來視覺化兩個變數之間的關係
