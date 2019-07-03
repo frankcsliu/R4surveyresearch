@@ -45,7 +45,7 @@ names(bbq)
 bbq$V44r <- rec(bbq$V44, rec="0:5=0[不會]; 6:10=1[會]", as.num=F) 
 frq(bbq$V44)
 frq(bbq$V44r)
-sjp.frq(bbq$V44r)
+plot_frq(bbq$V44r)
 
 ## 自變數
 # 假設一：「新鮮感」
