@@ -51,6 +51,7 @@
 |5.4.1 | p.137 |`tmp.nona <- na.omit(tmp)`| 此行之後新增一行註解：` # install.packages("GPArotation")`| 
 |6.1| p.140 | `sjt.frq(tscs2013$73r)`| `frq(tscs2013$v73r)` | 
 |6.1.1|p.146| `sjt.xtab(tscs2013$v73r,　tscs2013$sex)`|`sjt.xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8")`|
+|6.2.1|p.158| quali.sup | quali.sub |
 |7.4 | p.242-244 | `sjPlot::sjt.glm()`| `sjPlot::tab_model()` 因參數群在指令變更後出現大幅變動，請直接下載本節更新後的語法檔或使用`?tab_model`進行新舊參數對照 |
 |8.2.2| P.288 | `id15 <- read_spss("../Total.sav", option="foreign", enc = "big5", attach.var.labels = T)` | 簡化為 `id15 <- read_spss("../Total.sav", enc = "big5")` |
 |8.5.3 | p.333 | `sjp.frq()` | `plot_frq()` | 
