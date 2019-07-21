@@ -9,7 +9,7 @@ devtools::install_github("strengejacke/strengejacke")
 ## 資料檔的讀入、描述與製表
 library(sjlabelled)
 TNSS2015 <- read_spss("../TNSS2015.sav", enc="big5")
-save(TNSS2015,file= "../TNSS2015.rda")
+save(TNSS2015,file= "TNSS2015.rda") # 另存到目前所在的資料夾
 str(TNSS2015, list.len=5) # 為節省版面只顯示其中的五筆
 
 ## 使用`sjPlot::view_df()`來製作資料的次數分配報表
@@ -18,8 +18,7 @@ view_df(TNSS2015,
         file="TNSS2015tab.html",  # 結果直接另存新檔
         show.na = T, # 顯示未重新編碼前的無效值個數
         show.frq = T, # 顯示次數
-        show.prc = T, # 顯示百分比 
-        encoding = "big5"
+        show.prc = T # 顯示百分比 
         )
 
 ## 補充盒子：製作加權之後的資料報表 
@@ -38,7 +37,7 @@ view_df(TNSS2015,
 library(sjmisc)
 load("../tscs2013.rda") 
 descr(tscs2013, v62, v70, v93)  # 以純文字顯示特定變數的資訊
-descr(tscs2013, out="browser") # 以瀏覽器開啟所有變數的資訊（html檔）
+descr(tscs2013, v62, v70, v93, out="browser") # 以瀏覽器開啟所有變數的資訊（html檔）
 
 # 檢視資料中無效值的圖形化工具Amelia::missmap
 library(Amelia)
