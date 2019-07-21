@@ -44,7 +44,7 @@ library(sjmisc)
 # (01)男      (02)女
 table(tscs2013$v1)
 tscs2013$sex <- rec(tscs2013$v1, rec="1=1[男]; 2=0[女]", as.num = F)  #在編碼後方加上[]可直接給上選項數值的籤籤 
-frq(tscs2013$sex, weight.by = tscs2013$wr, out="v") # 加上權數後直接製作出帶標籤的次數分配表
+frq(tscs2013$sex, weights = tscs2013$wr, out="v") # 加上權數後直接製作出帶標籤的次數分配表
 
 # 2. 出生的民國年是v2y，age=(102-tscs2013$v2y)
 tscs2013$age <- 102-tscs2013$v2y
