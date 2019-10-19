@@ -32,6 +32,7 @@
 |4.2.2 | p.81 | `dat<- read_excel("xlssample.xls")` | `dat<- read_excel("../xlssample.xls")` | 
 |4.2.2 | p.81 | `dat<- read.xlsx("xlssample.xls")` | `dat<- read.xlsx("../xlssample.xls")` |
 |4.3.1 | p.89 |`load("../TNSS2015.rda") str(TNSS2015, list.len=5)`|`library(sjlabelled) TNSS2015 <- read_spss("../TNSS2015.sav", enc="big5") save(TNSS2015,file= "../TNSS2015.rda") str(TNSS2015, list.len=5)` |
+|4.3.1 | p.89-90 |  | `TNSS2015$TEL <- NULL` 加上移除個資欄位語法 |
 |4.3.2 | p.91 | `show.prc=T,` | `show.prc=T, encoding="big5"`|
 |4.3.2 | p.91 | `weight.by = TNSS2015$w,` | `weight.by = w,`|
 |4.3.3 | p.92 | `descr(tscs2013, out="browser") ` |`descr(tscs2013, v62, v70, v93, out="browser") `|
