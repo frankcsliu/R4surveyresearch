@@ -7,7 +7,7 @@
 
 ## 第一階段：讀入原始資料並轉為rda檔
 library(sjlabelled)
-tscs2013 <- read_spss("../tscs2013q2.sav")
+tscs2013 <- read_data("../tscs2013q2.sav")  #這是最新版的用法，也可以使用read_spss()
 
 # 用read.spss()處理亂碼
 # library(foreign)

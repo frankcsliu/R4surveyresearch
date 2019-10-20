@@ -45,13 +45,14 @@ plot_frq(tscs2013$v65r,
         weight.by = tscs2013$wr, wrap.title=30)
 
 ## 使用sjPlot來視覺化兩個變數之間的關係
-# 方法一：sjp.grpfrq()
+# 方法一：plot_grpfrq()
+library(sjPlot)
 library(sjlabelled)
 frq(tscs2013$sex)
 tscs2013$sex <- set_label(tscs2013$sex, label="sex")  # 重設變數標籤
 tscs2013$sex <- set_labels(tscs2013$sex, labels= c("female", "male")) #重設選項標籤
-sjp.grpfrq(tscs2013$v65r, tscs2013$sex)  # 橫向比較
-sjp.grpfrq(tscs2013$v65r, tscs2013$sex, bar.pos = "stack")  # 堆疊
+plot_grpfrq(tscs2013$v65r, tscs2013$sex)  # 橫向比較
+plot_grpfrq(tscs2013$v65r, tscs2013$sex, bar.pos = "stack")  # 堆疊
 
 # 方法二：sjp.xtab()
 sjt.xtab(tscs2013$v65r, tscs2013$sex) #製表

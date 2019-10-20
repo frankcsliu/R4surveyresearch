@@ -13,6 +13,7 @@ str(TNSS2015, list.len=5) # 為節省版面只顯示其中的五筆
 
 # 移除個資欄位
 TNSS2015$TEL <- NULL
+
 save(TNSS2015,file= "../TNSS2015.rda") # 另存到目前所在的資料夾
 
 ## 使用`sjPlot::view_df()`來製作資料的次數分配報表
