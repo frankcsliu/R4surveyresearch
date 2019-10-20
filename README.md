@@ -29,6 +29,7 @@
 |章節|頁碼|原文|修改|
 |----|----|----|-------|
 |4.2.3 補充盒子4.2 | p.84 | ”Home目錄下”|　”專案目錄下”　|
+|4.2.2 | p.80 | `read_spss()` | 2019年10月起可以使用新增的通用版的指令: `read_data()` 除了可以自動辨識SPSS, SAS及STATA的副檔名之外，使用者加上atomic.to.fac=T參數之後可以把帶標籤的變數都批次轉為類別變數factor.| 
 |4.2.2 | p.81 | `dat<- read_excel("xlssample.xls")` | `dat<- read_excel("../xlssample.xls")` | 
 |4.2.2 | p.81 | `dat<- read.xlsx("xlssample.xls")` | `dat<- read.xlsx("../xlssample.xls")` |
 |4.3.1 | p.89 |`load("../TNSS2015.rda") str(TNSS2015, list.len=5)`|`library(sjlabelled) TNSS2015 <- read_spss("../TNSS2015.sav", enc="big5") save(TNSS2015,file= "../TNSS2015.rda") str(TNSS2015, list.len=5)` |
@@ -36,7 +37,8 @@
 |4.3.2 | p.91 | `show.prc=T,` | `show.prc=T, encoding="big5"`|
 |4.3.2 | p.91 | `weight.by = TNSS2015$w,` | `weight.by = w,`|
 |4.3.3 | p.92 | `descr(tscs2013, out="browser") ` |`descr(tscs2013, v62, v70, v93, out="browser") `|
-|5.1.3 | p.99 | `sjPlot::sjt.frq()` | `sjmisc::frq()` |
+|5.1.3 | p.95 | `read_spss()` | 2019年10月起可以使用通用版的指令 `read_data()`|
+|5.1.3 | p.99 | `sjPlot::sjt.frq()` | `sjmisc::frq()` | 
 |5.1.3 | p.100 | `sjt.frq(tscs2013$sex, weight.by = tscs2013$wr)` | `frq(tscs2013$sex, weights = tscs2013$wr, out="v")` | 
 |5.1.3 | p.101 | `sjt.frq(tscs2013$v15r)` | `frq(tscs2013$v15r)` | 
 |5.1.3 | p.102 | `with(tscs2013, sjt.frq(v31a))` | `with(tscs2013, frq(v31a))` | 
@@ -50,10 +52,13 @@
 |5.3.1 | p.123 | `descr(tscs2013$age)`  | `descr(tscs2013$v65r)`  |
 |5.3.2 | p.124 |`sjp.frq()`| `plot_frq()`|
 |5.3.2 | p.132 |`kao06$mediaAtt <- apply(tmp,1,sum)`| 此行新增註解：`等同於 kao06$mediaAtt <- rowSums(tmp)`|
+|5.3.3 | p.125-128 | `sjp.grpfrq()` | 指令名稱更新: `plot_grpfrq()` |
+|5.3.3 | p.125-128 | `sjp.xtab()` | 指令名稱更新: `plot_xtab()` |
 |5.4.1 | p.133 | `kao06$mediaAtt <- row_sums(kao06,tv, radio, internet, newspaper, na.rm=T) table(kao06$mediaAtt)` | `library(dplyr) kao06 <- row_sums(kao06, tv, radio, internet, newspaper, n=4) table(kao06$rowsums)`| 
 |5.4.1 | p.137 |`tmp.nona <- na.omit(tmp)`| 此行之後新增一行註解：` # install.packages("GPArotation")`| 
 |6.1| p.140 | `sjt.frq(tscs2013$73r)`| `frq(tscs2013$v73r)` | 
 |6.1.1|p.146| `sjt.xtab(tscs2013$v73r,　tscs2013$sex)`|`sjt.xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8")`|
+|6.1.1 | p.146 | `sjp.xtab()` | 指令名稱更新: `plot_xtab()` |
 |6.2.1|p.158| quali.sup | quali.sub |
 |7.4 | p.242-244 | `sjPlot::sjt.glm()`| `sjPlot::tab_model()` 因參數群在指令變更後出現大幅變動，請直接下載本節更新後的語法檔或使用`?tab_model`進行新舊參數對照 |
 |8.2.2| P.288 | `id15 <- read_spss("../Total.sav", option="foreign", enc = "big5", attach.var.labels = T)` | 簡化為 `id15 <- read_spss("../Total.sav", enc = "big5")` |
