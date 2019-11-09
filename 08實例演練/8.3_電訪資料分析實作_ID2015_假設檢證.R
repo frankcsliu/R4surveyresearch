@@ -26,7 +26,7 @@ str(id15, list.len=5) # 列出前五個變數
 # (01)獨立   (02)維持現狀，以後獨立   (03)維持現狀，看情形再說   (04)永遠維持現狀 (05)維持現狀，以後統一   (06)統一   (98)不知道/無意見/未回答
 library(sjPlot)
 library(sjmisc)
-frq(id15$V27, weight.by = id15$WEIGHT)
+frq(id15$V27, weights = id15$WEIGHT)
 table(id15$V27, exclude = NULL)
 id15$stq <- rec(id15$V27, rec ="1,2,5,6=0; 3,4=1", 
                 as.num = F, 
@@ -54,7 +54,7 @@ library(sjmisc)
 # (01)希望   (00)不希望
 ## 原始資料（加權後）：
 table(id15$V17r, exclude=NULL)
-frq(id15$V17r, weight.by = id15$WEIGHT)
+frq(id15$V17r, weights = id15$WEIGHT)
 id15$idROC <- rec(id15$V17r, rec = "1=1; 0=0", as.num = F, 
                   val.labels = c("不希望","希望"))
 id15$idROC <- set_label(id15$idROC, "國名中華民國")
@@ -63,7 +63,7 @@ frq(id15$idROC)
 # 18、請問，您希不希望我們國家的正式名稱就叫做「台灣」？
 # (01)希望   (02)不希望   (98)不知道/無意見/未回答
 ## 原始資料（加權後）：
-frq(id15$V18r, weight.by = id15$WEIGHT)
+frq(id15$V18r, weights = id15$WEIGHT)
 id15$idTW <- rec(id15$V18r, rec = "1=1; 0=0", 
                  as.num = F, val.labels = c("不希望","希望"))
 id15$idTW <- set_label(id15$idTW, "國名台灣")
@@ -115,9 +115,11 @@ id15$green <- rec(id15$V4, rec = "4:6=1; else=0",
 frq(id15$green)
 
 ## 第四步：資料存檔
-save(id15, file="../id15.rda")
+save(id15, file="id15.rda") #另存到目前的專案夾內，不去覆蓋原始檔
 
 ## 第五步：視覺化核心變數之間的關係
+load("id15.rda")   # 從目前的專案夾內讀取含增變數的檔案
+
 #（1）用sjPlot套件製類別變數關聯圖  
 library(sjPlot)
 sjt.xtab(id15$indpt, id15$stq, 
@@ -155,47 +157,50 @@ plot_model(mod.1, type="est", auto.label = F)  # 迴歸係數圖
 
 library(sjPlot)
 mod.2 <- glm(stq ~ idROC + idTW + indpt + green 
-             + twnese + indpt:idROC + indpt:idTW + indpt:twnese,
+             + twnese + indpt:idROC 
+             + indpt:idTW + indpt:twnese,
              data = id15, family = binomial)
 summary(mod.2)
 
 # 加入其他控制變數
 mod.2.1 <- update(mod.2, . ~ . 
-                  + factor(V26) # 擔心美國放棄台灣
-                  + factor(V1) #性別 （女性較傾向維持現狀）
+                  + V26 # 擔心美國放棄台灣
+                  + V1 #性別 （女性較傾向維持現狀）
                   )
 summary(mod.2.1)
 
 ## 第七步：為迴歸分析結果製表
-ivlabels.mod.2 <- c("希望國號中華民國", "希望國號為台灣", "無政黨傾向", 
-                    "泛綠陣營","台灣人（非中國人亦非「都是」）",
-                    "無政黨傾向*國號中華民國", "無政黨傾向*國號台灣", 
+ivlabels.mod.2 <- c("Intercept",
+                    "希望國號中華民國", 
+                    "希望國號為台灣", 
+                    "無政黨傾向", 
+                    "泛綠陣營",
+                    "台灣人（非中國人亦非「都是」）",
+                    "無政黨傾向*國號中華民國", 
+                    "無政黨傾向*國號台灣", 
                     "無政黨傾向*台灣人")
 
-sjt.glm(mod.1, mod.2, 
-        show.aic=TRUE, 
-        show.loglik=TRUE,
-        show.ci=FALSE,
-        show.se=TRUE,
-        show.r2=TRUE,
-        show.col.header=TRUE,
-        digits.p=3, 
-        digits.se=3,
-        digits.est=3,
-        CSS=list(css.topborder="border-top:1px solid black;"), 
-        use.viewer=TRUE,
-        exp.coef=FALSE,
-        string.est="勝算",
-        string.se="標準誤",
-        string.dv = c("改變國號", "維持現狀"),
-        pred.labels = ivlabels.mod.2,
-        file="mod.1_and_mod.2.html")
-
-
+tab_model(mod.1, mod.2, 
+          show.aic=TRUE,
+          show.loglik=TRUE,
+          show.ci=FALSE,
+          show.se=TRUE,
+          show.r2=TRUE,
+          show.intercept=T, 
+          digits.p=2,
+          digits=3,
+          transform = exp, # 顯示勝算值odd ratio（此為預設值）；NULL則會顯示原始迴歸系數
+          CSS=list(css.topborder="border-top:1px solid black;"),
+          use.viewer=T,
+          string.est="勝算",
+          string.se="標準誤",
+          dv.labels = c("改變國號", "維持現狀"),
+          pred.labels = ivlabels.mod.2,
+          file="mod.1_and_mod.2.html")
 
 ## 三、其他影響維持現狀及統獨選擇的因素: 世代與地區
-維持現狀是否也是個valience issue? 
-  探討政治世代之間對維持現狀及國號認同的差異
+# 維持現狀是否也是個valience issue? 
+# 探討政治世代之間對維持現狀及國號認同的差異
 library(sjmisc)
 library(sjlabelled)
 id15$generation <- set_label(id15$generation, "世代")
@@ -224,3 +229,4 @@ sjPlot::sjt.itemanalysis(tmp)
 
 library(sjstats)
 reliab_test(tmp, scale.items = T)
+
