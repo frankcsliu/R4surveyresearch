@@ -122,7 +122,7 @@ load("id15.rda")   # 從目前的專案夾內讀取含增變數的檔案
 
 #（1）用sjPlot套件製類別變數關聯圖  
 library(sjPlot)
-sjt.xtab(id15$indpt, id15$stq, 
+tab_xtab(id15$indpt, id15$stq, 
          show.obs = T, 
          show.row.prc = T, 
          show.col.prc = T, 

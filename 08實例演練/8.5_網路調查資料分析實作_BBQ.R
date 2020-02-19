@@ -238,7 +238,7 @@ CrossTable(bbq$V37r, bbq$V45r,
 
 # 做法二
 library(sjPlot)
-sjt.xtab(bbq$V37r, bbq$V45r, 
+tab_xtab(bbq$V37r, bbq$V45r, 
          show.row.prc = TRUE, # 顯示列百分比
          show.col.prc = TRUE  # 顯示欄百分比
          )

@@ -45,12 +45,12 @@ CrossTable(tscs2013$v73r,　tscs2013$sex,　
            chisq=TRUE # 顯示卡方檢定數值
            ) 
 
-#方法三：以sjPlot::sjt.xtab()做交叉分析及製表
+#方法三：以sjPlot::tab_xtab()做交叉分析及製表
 library(sjPlot)
-sjt.xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8")
+tab_xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8")
 
 library(sjPlot)
-sjt.xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8", 
+tab_xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8", 
          show.row.prc = TRUE, # 顯示列百分比
          show.col.prc = TRUE, # 顯示欄百分比
          show.na = FALSE, # 不顯示無效值（預設）
@@ -76,7 +76,7 @@ frq(tscs2013$cname)
 library(sjPlot)
 
 # 資料分析結果拒絕虛無假設：兩者高度相關。
-sjt.xtab(tscs2013$cname,　tscs2013$generation, 
+tab_xtab(tscs2013$cname,　tscs2013$generation, 
          show.row.prc = TRUE, # 顯示列百分比
          show.col.prc = TRUE, # 顯示欄百分比
          show.na = FALSE, # 不顯示無效值（預設）
@@ -102,7 +102,7 @@ library(dplyr)
 prestige <- select(Prestige, 
                    education, income, prestige, women)
 library(sjPlot)
-sjt.corr(prestige, 
+tab_corr(prestige, 
          show.p = T, # 顯示顯著性 （預設）
          triangle = "lower" #只顯示下方的三角型
          )
