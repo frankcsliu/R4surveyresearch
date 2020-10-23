@@ -3,7 +3,8 @@
 ### 5.3 變數的描述製表與製圖 
 
 ## 用製表的方式描述變數
-load("../tscs2013.rda")
+library(sjlabelled)
+tscs2013 <- read_data("../tscs2013q2.sav") #讀入原始檔
 
 # table()
 table(tscs2013$v65, exclude=NULL) # exclude=NULL 顯示無效值
@@ -29,9 +30,11 @@ tscs2013$v65r <- rec(tscs2013$v65r, rec="rev",
                                     "serious (3)", 
                                     "very serious (4)"))
 frq(tscs2013$v65r, weights = tscs2013$wr) 
+save(tscs2013, file="tscs2013r.rda")  #把含有新增變數的資料檔另存在工作資料夾
 
 # psych::describe()
 library(psych)
+load("../tscs2013.rda")  #讀取本書提供的含有編碼後所有變數的資料檔
 describe(tscs2013$age) 
 
 # sjmisc::decr()
@@ -54,9 +57,9 @@ tscs2013$sex <- set_labels(tscs2013$sex, labels= c("female", "male")) #重設選
 plot_grpfrq(tscs2013$v65r, tscs2013$sex)  # 橫向比較
 plot_grpfrq(tscs2013$v65r, tscs2013$sex, bar.pos = "stack")  # 堆疊
 
-# 方法二：sjp.xtab()
-sjt.xtab(tscs2013$v65r, tscs2013$sex) #製表
-sjp.xtab(tscs2013$v65r, tscs2013$sex) #製圖
+# 方法二：plot_xtab()
+plot_xtab(tscs2013$v65r, tscs2013$sex) #製表
+plot_xtab(tscs2013$v65r, tscs2013$sex) #製圖
 
 ## 補充盒子：用`ggplot2`畫長條圖
 library(ggplot2)
