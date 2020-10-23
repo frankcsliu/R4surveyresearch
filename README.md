@@ -51,10 +51,9 @@
 |5.3.1 | p.123 | `describe(tscs2013$age)` | `load("../tscs2013.rda")  describe(tscs2013$v65r)`  |
 |5.3.1 | p.123 | `descr(tscs2013$age)`  | `descr(tscs2013$v65r)`  |
 |5.3.2 | p.124 |`sjp.frq()`| `plot_frq()`|
+|5.3.2-3 | p.125-128 | `sjp.grpfrq()` | 指令名稱更新: `plot_grpfrq()` |
+|5.3.2-3 | p.125-128 | `sjp.xtab()` | 指令名稱更新: `plot_xtab()` |
 |5.3.2 | p.132 |`kao06$mediaAtt <- apply(tmp,1,sum)`| 此行新增註解：`等同於 kao06$mediaAtt <- rowSums(tmp)`|
-|5.3.3 | p.127 | `sjp.xtab()` | 指令名稱更新：`plot_xtab()` |
-|5.3.3 | p.125-128 | `sjp.grpfrq()` | 指令名稱更新: `plot_grpfrq()` |
-|5.3.3 | p.125-128 | `sjp.xtab()` | 指令名稱更新: `plot_xtab()` |
 |5.4.1 | p.133 | `kao06$mediaAtt <- row_sums(kao06,tv, radio, internet, newspaper, na.rm=T) table(kao06$mediaAtt)` | `library(dplyr) kao06 <- row_sums(kao06, tv, radio, internet, newspaper, n=4) table(kao06$rowsums)`| 
 |5.4.1 | p.137 |`tmp.nona <- na.omit(tmp)`| 此行之後新增一行註解：` # install.packages("GPArotation")`| 
 |6.1| p.140 | `sjt.frq(tscs2013$73r)`| `frq(tscs2013$v73r)` | 
