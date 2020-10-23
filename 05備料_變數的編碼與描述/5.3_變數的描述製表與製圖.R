@@ -31,11 +31,14 @@ tscs2013$v65rv <- rec(tscs2013$v65r, rec="rev",
                                     "very serious (4)"))
 frq(tscs2013$v65rv)
 # frq(tscs2013$v65rv, weights = tscs2013$wr)  #加上權數之後會無法正確顯示無效值（套件作者修正錯誤中）
-save(tscs2013, file="tscs2013r.rda")  #把含有新增變數的資料檔另存在工作資料夾
+
+#上半場結束：把含有新增變數的資料檔另存在工作資料夾
+save(tscs2013, file="tscs2013r.rda")  
 
 # psych::describe()
 library(psych)
-load("../tscs2013.rda")  #讀取本書提供的含有編碼後所有變數的資料檔
+# 下半場開始：讀取本書提供的含有編碼後所有變數的資料檔，再接著操作
+load("../tscs2013.rda")  
 describe(tscs2013$age) 
 
 # sjmisc::decr()
@@ -59,12 +62,24 @@ library(sjlabelled)
 frq(tscs2013$sex)
 tscs2013$sex <- set_label(tscs2013$sex, label="sex")  # 變更變數標籤
 tscs2013$sex <- set_labels(tscs2013$sex, labels= c("female", "male")) # 變更選項標籤
+
+tscs2013$v65r <- rec(tscs2013$v65r, rec="rev", 
+                      var.label="how serious the issue is", 
+                      val.labels = c("not at all (1)", 
+                                     "not very serious (2)", 
+                                     "serious (3)", 
+                                     "very serious (4)"))
+
 plot_grpfrq(tscs2013$v65r, tscs2013$sex)  # 橫向比較
 plot_grpfrq(tscs2013$v65r, tscs2013$sex, bar.pos = "stack")  # 堆疊
 
 # 方法二：plot_xtab()
 plot_xtab(tscs2013$v65r, tscs2013$sex) #製表
 plot_xtab(tscs2013$v65r, tscs2013$sex) #製圖
+
+#下半場結束：把含有新增變數的資料檔另存在工作資料夾
+# 注意：這個檔案與本書所附的檔案已不相同，存在本地資料夾可避免互相覆蓋
+save(tscs2013, file="tscs2013r.rda")  
 
 ## 補充盒子：用`ggplot2`畫長條圖
 library(ggplot2)
