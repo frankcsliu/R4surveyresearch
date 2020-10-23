@@ -23,13 +23,13 @@ tscs2013$v65r <- rec(tscs2013$v65,
                      rec="94:99=NA; else=copy",  
                      as.num = F)
 frq(tscs2013$v65r)
-tscs2013$v65rv <- rec(tscs2013$v65r, rec="rev", 
+tscs2013$v65r <- rec(tscs2013$v65r, rec="rev", 
                      var.label="how serious the issue is", 
                      val.labels = c("not at all (1)", 
                                     "not very serious (2)", 
                                     "serious (3)", 
                                     "very serious (4)"))
-frq(tscs2013$v65rv)
+frq(tscs2013$v65r)
 # frq(tscs2013$v65rv, weights = tscs2013$wr)  #加上權數之後會無法正確顯示無效值（套件作者修正錯誤中）
 
 #上半場結束：把含有新增變數的資料檔另存在工作資料夾
