@@ -30,7 +30,9 @@ tscs2013$v65r <- rec(tscs2013$v65r, rec="rev",
                                     "serious (3)", 
                                     "very serious (4)"))
 frq(tscs2013$v65r)
-frq(tscs2013$v65r, weights = tscs2013$wr)  #權數會套用在所有觀察值上，因此無效值會歸零
+frq(tscs2013$v65r, weights = tscs2013$wr)  #權數會套用在所有觀察值上（但無效值會歸零則需要與套件作者討論為何會如此）
+
+
 #上半場結束：把含有新增變數的資料檔另存在工作資料夾
 save(tscs2013, file="tscs2013r.rda")  
 
