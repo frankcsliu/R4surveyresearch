@@ -11,8 +11,8 @@ library(sjlabelled)
 TNSS2015 <- read_spss("../TNSS2015.sav") #若有亂碼時加上參數 enc="big5"
 str(TNSS2015, list.len=5) # 為節省版面只顯示其中的五筆
 
-# 移除個資欄位
-TNSS2015$TEL <- NULL
+# 移除欄位
+TNSS2015$TEL <- NULL　#含個資的欄位應予刪除不使用
 
 save(TNSS2015,file= "TNSS2015.rda") # 另存到目前所在的資料夾
 
