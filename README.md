@@ -51,6 +51,7 @@
 |5.3.1 | p.123 | `describe(tscs2013$age)` | `load("../tscs2013.rda")  describe(tscs2013$v65r)`  |
 |5.3.1 | p.123 | `descr(tscs2013$age)`  | `descr(tscs2013$v65r)`  |
 |5.3.2 | p.124 |`sjp.frq()`| `plot_frq()`|
+|5.3.2 | p.126 | | 在sex加上標籤之後，後補上一段編碼：`tscs2013$v65r <- rec(tscs2013$v65r, rec="rev", var.label="how serious the issue is", val.labels = c("not at all (1)", "not very serious (2)", "serious (3)", "very serious (4)"))`| 
 |5.3.2-3 | p.125-128 | `sjp.grpfrq()` | 指令名稱更新: `plot_grpfrq()` |
 |5.3.2-3 | p.125-128 | `sjp.xtab()` | 指令名稱更新: `plot_xtab()` |
 |5.3.2 | p.132 |`kao06$mediaAtt <- apply(tmp,1,sum)`| 此行新增註解：`等同於 kao06$mediaAtt <- rowSums(tmp)`|
