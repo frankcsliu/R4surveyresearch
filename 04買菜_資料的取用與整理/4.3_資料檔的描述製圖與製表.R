@@ -8,17 +8,18 @@ devtools::install_github("strengejacke/strengejacke")
 
 ## 資料檔的讀入、描述與製表
 library(sjlabelled)
-TNSS2015 <- read_spss("../TNSS2015.sav", enc="big5")
+TNSS2015 <- read_spss("../TNSS2015.sav") #若有亂碼時加上參數 enc="big5"
 str(TNSS2015, list.len=5) # 為節省版面只顯示其中的五筆
 
 # 移除個資欄位
 TNSS2015$TEL <- NULL
 
-save(TNSS2015,file= "../TNSS2015.rda") # 另存到目前所在的資料夾
+save(TNSS2015,file= "TNSS2015.rda") # 另存到目前所在的資料夾
 
 ## 使用`sjPlot::view_df()`來製作資料的次數分配報表
+load("TNSS2015.rda")
 library(sjPlot)
-view_df(TNSS2015,
+view_df(TNSS2015,  #若有亂碼, 可使用參數: encoding="big5",
         file="TNSS2015tab.html",  # 結果直接另存新檔
         show.na = T, # 顯示未重新編碼前的無效值個數
         show.frq = T, # 顯示次數
