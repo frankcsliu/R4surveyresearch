@@ -75,7 +75,7 @@ plot_grpfrq(tscs2013$v65r, tscs2013$sex)  # 橫向比較
 plot_grpfrq(tscs2013$v65r, tscs2013$sex, bar.pos = "stack")  # 堆疊
 
 # 方法二：plot_xtab()
-plot_xtab(tscs2013$v65r, tscs2013$sex) #製表
+sjt.xtab(tscs2013$v65r, tscs2013$sex) #製表
 plot_xtab(tscs2013$v65r, tscs2013$sex) #製圖
 
 #下半場結束：把含有新增變數的資料檔另存在工作資料夾
