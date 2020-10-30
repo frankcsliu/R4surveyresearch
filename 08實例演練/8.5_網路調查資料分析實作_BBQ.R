@@ -42,6 +42,15 @@ names(bbq)
 ## 依變數：「明年會不會烤肉」
 # （V44）說回到烤肉，請問您明年會不會想全家人一起烤肉？ (0~10)
 # table(bbq$V44)
+
+# !!! 
+# 注意：以下的「懶人上標籤法」目前只適用在mac電腦；
+# 使用Windows電腦時，需要將[ ]其中的字改為英文才能正常執行；
+# 建議Windows使用者，將[ ]及其中的字刪除再執行，
+#  或採用上述介紹的sjlabelled::setlabel() 
+# 以及sjlabelled::setlabels()來進行上變數標籤及選項標籤的動作
+# 參閱 5.3（p.126)
+
 bbq$V44r <- rec(bbq$V44, rec="0:5=0[不會]; 6:10=1[會]", as.num=F) 
 frq(bbq$V44)
 frq(bbq$V44r)
@@ -169,7 +178,7 @@ frq(bbq$V37r)
 
 ## 儲存檔案
 names(bbq) # 確認包含了上面新增的14個變數
-save(bbq, file="../BBQ.rda")
+save(bbq, file="BBQ.rda")
 rm(list=ls())
 
 ## 確認式分析：二元勝算對數模型
@@ -182,7 +191,7 @@ rm(list=ls())
 # ***假設七：認為烤肉不是聯絡感情的首選便會降低明年烤肉的意願
 
 library(car)
-load("../BBQ.rda")
+load("BBQ.rda")
 
 ## 模型一：包含所有解釋變數的原始模型
 mod.1 <- glm(V44r ~ V18r+V20r+V21r+V23r+V27r+V45r+V48r, 
@@ -202,7 +211,7 @@ summary(mod.3)
 vif(mod.3)
 
 ## 探索式分析：MCA
-load("../BBQ.rda")
+load("BBQ.rda")
 library(dplyr)
 library(FactoMineR)
 library(factoextra)
