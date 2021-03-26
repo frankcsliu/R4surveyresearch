@@ -58,6 +58,7 @@ frq(tscs2013r$sex, weights = tscs2013r$wr)
 tscs2013r$age <- 102 - as.numeric(tscs2013r$v2y)
 plot_frq(tscs2013r$age, type = "density")
 
+
 #hist(tscs2013r$age)
 tscs2013r$generation <- NA
 tscs2013r$generation[tscs2013r$age>=(2013-1931)] <- 1
