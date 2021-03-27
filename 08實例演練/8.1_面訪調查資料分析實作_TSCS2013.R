@@ -56,7 +56,7 @@ frq(tscs2013r$sex, weights = tscs2013r$wr)
 
 # 2. 出生的民國年是v2y，age=(102-tscs2013r$v2y)
 tscs2013r$age <- 102 - as.numeric(tscs2013r$v2y)
-plot_frq(tscs2013r$age, type = "density")
+plot_frq(tscs2013r$age, type = "density") #原來的sjp.req()已被更新為plot_frq()
 
 #hist(tscs2013r$age)
 tscs2013r$generation <- NA
