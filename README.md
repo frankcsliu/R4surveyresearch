@@ -64,6 +64,7 @@
 |6.2.1|p.158| quali.sup | quali.sub |
 |7.4 | p.242-244 | `sjPlot::sjt.glm()`| `sjPlot::tab_model()` 因參數群在指令變更後出現大幅變動，請直接下載本節更新後的語法檔或使用`?tab_model`進行新舊參數對照 |
 |8.1.2 |p.251, p.255| `weight.by`| `weights`|
+|8.1.2 |p.252 | `sjp.frq()` | `plot_frq()` |
 |8.2.2| P.288 | `id15 <- read_spss("../Total.sav", option="foreign", enc = "big5", attach.var.labels = T)` | 簡化為 `id15 <- read_spss("../Total.sav", enc = "big5")` |
 |8.3.1| p.291, 295|'weight.by'|`weights`|
 |8.3.2| p.300 | `sjt.xtab()` | 指令名稱更新: `tab_xtab()` |
