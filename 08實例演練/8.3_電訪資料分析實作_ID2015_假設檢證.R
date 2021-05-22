@@ -221,12 +221,21 @@ id15$gen.5 <- set_label(id15$gen.5, "第五世代(27~36)")
 id15$gen.6 <- set_label(id15$gen.6, "第六世代(<=26)")
 frq(id15$gen.3)
 
-# V16~V20加總製作成指標，先作初步分析：
+# 試將V16~V20加總製作成指標，先作初步分析：
 load("../id15.rda")
 tmp <- subset(id15, select=c(V16:V20))
 tmp <- as.data.frame(na.omit(tmp))
 sjPlot::sjt.itemanalysis(tmp) 
 
-library(sjstats)
-reliab_test(tmp, scale.items = T)
+# 因 sjstats 套件功能調整，信度測量可以使用 performance::item_reliability()
+# https://cran.r-project.org/web/packages/sjstats/news/news.html
+
+# 這兩行已作廢
+# library(sjstats)
+# reliab_test(tmp, scale.items = T)
+
+# 新的做法：
+# install.packagez("performance")
+library(performance)
+item_reliability(tmp)
 
