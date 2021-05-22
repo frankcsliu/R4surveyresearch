@@ -58,6 +58,7 @@
 |5.3.2 | p.132 |`kao06$mediaAtt <- apply(tmp,1,sum)`| 此行新增註解：`等同於 kao06$mediaAtt <- rowSums(tmp)`|
 |5.4.1 | p.133 | `kao06$mediaAtt <- row_sums(kao06,tv, radio, internet, newspaper, na.rm=T) table(kao06$mediaAtt)` | `library(dplyr) kao06 <- row_sums(kao06, tv, radio, internet, newspaper, n=4) table(kao06$rowsums)`| 
 |5.4.1 | p.137 |`tmp.nona <- na.omit(tmp)`| 此行之後新增一行註解：` # install.packages("GPArotation")`| 
+|5.4.1 | p.137 | 補充盒子5.5 | 新增方法 `performance::item_reliability()` |
 |6.1| p.140 | `sjt.frq(tscs2013$73r)`| `frq(tscs2013$v73r)` | 
 |6.1.1|p.146| `sjt.xtab(tscs2013$v73r,　tscs2013$sex)`|`tab_xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8")`|
 |6.1.1 | p.146 | `sjt.xtab()` | 指令名稱更新: `tab_xtab()` |
