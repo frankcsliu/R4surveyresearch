@@ -63,6 +63,9 @@
 |6.1.1|p.146| `sjt.xtab(tscs2013$v73r,　tscs2013$sex)`|`tab_xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8")`|
 |6.1.1 | p.146 | `sjt.xtab()` | 指令名稱更新: `tab_xtab()` |
 |6.2.1|p.158| quali.sup | quali.sub |
+|7.3.2|p.218| | 範例語法檔補上與課本一致的兩行：`library(nnet)　
+mod.nnet <- multinom(grade~pe+c, data=wgc)`|　
+|7.3.3|p.229 |`rms::lrm(psapp)` |`rms::lrm(psapp, data=admit)`|
 |7.4 | p.242-244 | `sjPlot::sjt.glm()`| `sjPlot::tab_model()` 因參數群在指令變更後出現大幅變動，請直接下載本節更新後的語法檔或使用`?tab_model`進行新舊參數對照 |
 |8.1.2 |p.251, p.255| `weight.by`| `weights`|
 |8.1.2 |p.252 | `sjp.frq()` | `plot_frq()` |
