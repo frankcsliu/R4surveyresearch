@@ -52,11 +52,16 @@ library(sjmisc)
 frq(tscs2013r$v1)
 tscs2013r$sex <- rec(tscs2013r$v1, as.num = F, rec="1=1; 2=0", 
                      val.labels = c("女","男"))
-frq(tscs2013r$sex, weight.by = tscs2013r$wr)
+frq(tscs2013r$sex, weights = tscs2013r$wr)
 
 # 2. 出生的民國年是v2y，age=(102-tscs2013r$v2y)
 tscs2013r$age <- 102 - as.numeric(tscs2013r$v2y)
-sjp.frq(tscs2013r$age, type = "density")
+<<<<<<< HEAD
+plot_frq(tscs2013r$age, type = "density")
+
+=======
+plot_frq(tscs2013r$age, type = "density") #原來的sjp.req()已被更新為plot_frq()
+>>>>>>> c6f953821a0d31086e212f0d8ff8dea3840d9ea9
 
 #hist(tscs2013r$age)
 tscs2013r$generation <- NA
@@ -120,7 +125,7 @@ tscs2013r$college <- rec(tscs2013r$v21, rec="10:21=1; else=0", as.num = F) #大�
 # (f)尊重我國的政治體制和法律(01) (02) (03) (04) (05)
 # (g)在感情上認同我們的國家(01) (02) (03) (04) (05)
 # (h)祖先都是本國人(01) (02) (03) (04) (05)
-with(tscs2013r, frq(v31a, weight.by = wr))
+with(tscs2013r, frq(v31a, weights = wr))
 with(tscs2013r, table(v31a))
 tscs2013r$v31ar <- rec(tscs2013r$v31a, rec="1,2=1; 3:5=0; 93:98=NA", as.num = F)
 tscs2013r$v31br <- rec(tscs2013r$v31b, rec="1,2=1; 3:5=0; 93:98=NA", as.num = F)

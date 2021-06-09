@@ -209,8 +209,6 @@ id15$generation <- set_labels(id15$generation,
                                 c("第一世代(>=84)","第二世代(62~83)",
                                   "第三世代(47~61)","第四世代(37~46)",
                                   "第五世代(27~36)","第六世代(<=26)"))
-
-
 frq(id15$generation)
 
 id15$gen.1 <- set_label(id15$gen.1, "第一世代(>=84)")
@@ -220,13 +218,3 @@ id15$gen.4 <- set_label(id15$gen.4, "第四世代(37~46)")
 id15$gen.5 <- set_label(id15$gen.5, "第五世代(27~36)")
 id15$gen.6 <- set_label(id15$gen.6, "第六世代(<=26)")
 frq(id15$gen.3)
-
-# V16~V20加總製作成指標，先作初步分析：
-load("../id15.rda")
-tmp <- subset(id15, select=c(V16:V20))
-tmp <- as.data.frame(na.omit(tmp))
-sjPlot::sjt.itemanalysis(tmp) 
-
-library(sjstats)
-reliab_test(tmp, scale.items = T)
-

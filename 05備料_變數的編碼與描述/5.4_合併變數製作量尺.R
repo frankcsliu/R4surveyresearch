@@ -87,4 +87,6 @@ psych::omega(tmp.nona) # alpha=0.37; omega=0.42
 
 ## 補充盒子：其他計算Alpha的工具
 coefficientalpha::alpha(tmp.nona)
-sjPlot::sjt.itemanalysis(tmp)
+sjPlot::sjt.itemanalysis(tmp) 
+performance::item_reliability(tmp)
+
