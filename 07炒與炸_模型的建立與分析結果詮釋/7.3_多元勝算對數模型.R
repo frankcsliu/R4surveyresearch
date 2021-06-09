@@ -97,4 +97,4 @@ ctable
 
 ## 勝算對數模型的適配度指標 pseudo-Rsquare
 # install.packages("rms")
-rms::lrm(psapp, data=admit)# Nagelkerke's R-square=.604
+rms::lrm(psapp, data=admit)# Nagelkerke's R-square=.604 
