@@ -28,6 +28,7 @@
 
 |章節|頁碼|原文|修改|
 |----|----|----|-------|
+|2.3.1| p.26| 1900000 | 19000000 |
 |4.2.3 補充盒子4.2 | p.84 | ”Home目錄下”|　”專案目錄下”　|
 |4.2.2 | p.80 | `read_spss()` | 2019年10月起可以使用新增的通用版的指令: `read_data()` 除了可以自動辨識SPSS, SAS及STATA的副檔名之外，使用者加上atomic.to.fac=T參數之後可以把帶標籤的變數都批次轉為類別變數factor.| 
 |4.2.2 | p.81 | `dat<- read_excel("xlssample.xls")` | `dat<- read_excel("../xlssample.xls")` | 
@@ -57,11 +58,14 @@
 |5.3.2 | p.132 |`kao06$mediaAtt <- apply(tmp,1,sum)`| 此行新增註解：`等同於 kao06$mediaAtt <- rowSums(tmp)`|
 |5.4.1 | p.133 | `kao06$mediaAtt <- row_sums(kao06,tv, radio, internet, newspaper, na.rm=T) table(kao06$mediaAtt)` | `library(dplyr) kao06 <- row_sums(kao06, tv, radio, internet, newspaper, n=4) table(kao06$rowsums)`| 
 |5.4.1 | p.137 |`tmp.nona <- na.omit(tmp)`| 此行之後新增一行註解：` # install.packages("GPArotation")`| 
+|5.4.1 | p.137 | 補充盒子5.5 | 新增方法 `performance::item_reliability()` |
 |6.1| p.140 | `sjt.frq(tscs2013$73r)`| `frq(tscs2013$v73r)` | 
 |6.1.1|p.146| `sjt.xtab(tscs2013$v73r,　tscs2013$sex)`|`tab_xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8")`|
 |6.1.1 | p.146 | `sjt.xtab()` | 指令名稱更新: `tab_xtab()` |
 |6.2.1|p.158| quali.sup | quali.sub |
 |7.4 | p.242-244 | `sjPlot::sjt.glm()`| `sjPlot::tab_model()` 因參數群在指令變更後出現大幅變動，請直接下載本節更新後的語法檔或使用`?tab_model`進行新舊參數對照 |
+|8.1.2 |p.251, p.255| `weight.by`| `weights`|
+|8.1.2 |p.252 | `sjp.frq()` | `plot_frq()` |
 |8.2.2| P.288 | `id15 <- read_spss("../Total.sav", option="foreign", enc = "big5", attach.var.labels = T)` | 簡化為 `id15 <- read_spss("../Total.sav", enc = "big5")` |
 |8.3.1| p.291, 295|'weight.by'|`weights`|
 |8.3.2| p.300 | `sjt.xtab()` | 指令名稱更新: `tab_xtab()` |
@@ -70,4 +74,4 @@
 |8.5.3 | p.333 | `sjp.frq()` | `plot_frq()` | 
 |8.5.6 | p.348 | #581 | #629 | 
 |8.5.7| p.352 | `sjt.xtab()` | 指令名稱更新: `tab_xtab()` |
-|8.5.8 | p.353 | 語法框中的註記文字假設應修正與p.349的內容一致| # 初步假設：覺得自己時間充裕的人(V37r=0)，愈可能傾向見面團聚取代使用手機（V45r=1）；相反的，自覺一天內時間不足的人，反而傾向以手機來取代見面團聚。|
+|8.5.8 | p.353 | 語法框中的註記文字假設修正與p.349的內容一致| # 初步假設：覺得自己時間充裕的人(V37r=0)，愈可能傾向見面團聚取代使用手機（V45r=1）；相反的，自覺一天內時間不足的人，反而傾向以手機來取代見面團聚。|
