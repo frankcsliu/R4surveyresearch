@@ -33,6 +33,8 @@ summary(mod.vglm)
 
 # 方法二：使用 nnet::multinom()
 # 計算z值: 迴歸係數除以標準誤
+library(nnet)
+mod.nnet <- multinom(grade~pe+c, data=wgc)
 z <-coef(mod.nnet) / summary(mod.nnet)$standard.error
 z
 
@@ -95,4 +97,4 @@ ctable
 
 ## 勝算對數模型的適配度指標 pseudo-Rsquare
 # install.packages("rms")
-rms::lrm(psapp) # Nagelkerke's R-square=.604
+rms::lrm(psapp, data=admit)# Nagelkerke's R-square=.604
