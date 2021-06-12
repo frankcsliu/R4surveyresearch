@@ -74,7 +74,7 @@ save(kao06, file="../kao06r.rda")
 
 ## 為量尺製圖
 kao06$mediaAtt <- unlist(kao06$mediaAtt)
-sjp.frq(kao06$mediaAtt, 
+plot_frq(kao06$mediaAtt, 
         type = "histogram", 
         axis.title = "media attention scale", 
         xlim=c(0,22))
