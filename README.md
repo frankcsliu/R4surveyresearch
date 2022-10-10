@@ -57,15 +57,12 @@
 |5.3.2-3 | p.125-128 | `sjp.xtab()` | 指令名稱更新: `plot_xtab()` |
 |5.3.2 | p.132 |`kao06$mediaAtt <- apply(tmp,1,sum)`| 此行新增註解：`等同於 kao06$mediaAtt <- rowSums(tmp)`|
 |5.4.1 | p.133 | `kao06$mediaAtt <- row_sums(kao06,tv, radio, internet, newspaper, na.rm=T) table(kao06$mediaAtt)` | `library(dplyr) kao06 <- row_sums(kao06, tv, radio, internet, newspaper, n=4) table(kao06$rowsums)`| 
-|5.4.1 | p.135 | `sjp.frq() ` |`plot_frq()`|
 |5.4.1 | p.137 |`tmp.nona <- na.omit(tmp)`| 此行之後新增一行註解：` # install.packages("GPArotation")`| 
 |5.4.1 | p.137 | 補充盒子5.5 | 新增方法 `performance::item_reliability()` |
 |6.1| p.140 | `sjt.frq(tscs2013$73r)`| `frq(tscs2013$v73r)` | 
 |6.1.1|p.146| `sjt.xtab(tscs2013$v73r,　tscs2013$sex)`|`tab_xtab(tscs2013$v73r,　tscs2013$sex, encoding="utf8")`|
 |6.1.1 | p.146 | `sjt.xtab()` | 指令名稱更新: `tab_xtab()` |
 |6.2.1|p.158| quali.sup | quali.sub |
-|7.3.2|p.218| | 範例語法檔補上與課本一致的兩行：`library(nnet) mod.nnet <- multinom(grade~pe+c, data=wgc)`|　
-|7.3.3|p.229 |`rms::lrm(psapp)` |`rms::lrm(psapp, data=admit)`|
 |7.4 | p.242-244 | `sjPlot::sjt.glm()`| `sjPlot::tab_model()` 因參數群在指令變更後出現大幅變動，請直接下載本節更新後的語法檔或使用`?tab_model`進行新舊參數對照 |
 |8.1.2 |p.251, p.255| `weight.by`| `weights`|
 |8.1.2 |p.252 | `sjp.frq()` | `plot_frq()` |
