@@ -3,7 +3,7 @@
 ## 歡迎  
 ![](http://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/079/48/0010794831.jpg&v=5b5edaa6&w=348&h=348)  
 
-《民意調查資料分析的R實戰手冊》於2018年8月由五南出版。網路購書處：[天瓏](https://www.tenlong.com.tw/products/9789571196879)、[誠品](http://www.eslite.com/product.aspx?pgid=1001116712698095)、[三民](http://www.sanmin.com.tw/Product/index/006878903)、[博客來](http://www.books.com.tw/products/0010794831)、[墊腳石](http://www.tcsb.com.tw/SalePage/Index/4612965)、[讀冊生活](https://www.taaze.tw/sing.html?pid=11100853002)、[Momo](https://www.thenewslens.com/article/138691)
+《民意調查資料分析的R實戰手冊》於2018年8月由五南出版。網路購書處：[天瓏](https://www.tenlong.com.tw/products/9789571196879)、[誠品](https://www.eslite.com/product/1001116712698095)、[三民](http://www.sanmin.com.tw/Product/index/006878903)、[博客來](http://www.books.com.tw/products/0010794831)、[墊腳石](http://www.tcsb.com.tw/SalePage/Index/4612965)、[讀冊生活](https://www.taaze.tw/sing.html?pid=11100853002)、[Momo](https://www.momoshop.com.tw/goods/GoodsDetail.jsp?i_code=8563029&Area=search&mdiv=403&oid=1_1&cid=index&kw=%E6%B0%91%E6%84%8F%E8%AA%BF%E6%9F%A5%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E7%9A%84R)
 
 ## 本書特色  
 - 本書主要針對人文社科學子，以及有興趣以R分析民意調查資料的學習者所打造。以多種民意調查進行資料分析實作，包含大型面訪調查資料、電話調查資料及網路調查資料，從資料描述到報表輸出，都能用R輕鬆完成。
