@@ -3,7 +3,7 @@
 ## 歡迎  
 ![](http://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/079/48/0010794831.jpg&v=5b5edaa6&w=348&h=348)  
 
-《民意調查資料分析的R實戰手冊》於2018年8月由五南出版。請按此頁右上角的"Code" 綠色按鈕-> "Download Zip"，下載本書最新的語法檔及資料檔。網路購書處：[天瓏](https://www.tenlong.com.tw/products/9789571196879)、[誠品](http://www.eslite.com/product.aspx?pgid=1001116712698095)、[三民](http://www.sanmin.com.tw/Product/index/006878903)、[博客來](http://www.books.com.tw/products/0010794831)、[墊腳石](http://www.tcsb.com.tw/SalePage/Index/4612965)、[讀冊生活](https://www.taaze.tw/sing.html?pid=11100853002)、[Momo](https://www.thenewslens.com/article/138691)
+《民意調查資料分析的R實戰手冊》於2018年8月由五南出版。網路購書處：[天瓏](https://www.tenlong.com.tw/products/9789571196879)、[誠品](http://www.eslite.com/product.aspx?pgid=1001116712698095)、[三民](http://www.sanmin.com.tw/Product/index/006878903)、[博客來](http://www.books.com.tw/products/0010794831)、[墊腳石](http://www.tcsb.com.tw/SalePage/Index/4612965)、[讀冊生活](https://www.taaze.tw/sing.html?pid=11100853002)、[Momo](https://www.thenewslens.com/article/138691)
 
 ## 本書特色  
 - 本書主要針對人文社科學子，以及有興趣以R分析民意調查資料的學習者所打造。以多種民意調查進行資料分析實作，包含大型面訪調查資料、電話調查資料及網路調查資料，從資料描述到報表輸出，都能用R輕鬆完成。
@@ -14,11 +14,10 @@
 - 介紹「探索式資料分析」的工具。大數據高手將有機會一窺小資料的潛力，而入門的學習者將能感受到這個探索途徑在假設檢證的研究傳統之外所帶來的啟示。  
 
 ## 檔案使用注意事項
+1. 請按此頁右上角的"Code" 綠色按鈕-> "Download Zip"，下載本書最新的語法檔及資料檔。
+2. 下載並解壓縮之後，請進入所選的章節資料夾，點選各章節專屬的.Rproj檔案，便能在Posit（2022.11之前叫作RStudio）開啟各章專案。每一段語法檔開頭的here::here()指令，是為了讓你確認你目前的工作路徑（working directory）是目前所在的資料夾無誤。
 
-## 2022.10.24 更新說明: 
-【下載之後與正式操作之前的注意事項】下載並解壓縮之後，請進入所選的章節資料夾，點選各章節專屬的.Rproj檔案，便能在Posit（2022.11之前叫作RStudio）開啟各章專案。每一段語法檔開頭的here::here()指令，是為了讓你確認你目前的工作路徑（working directory）是目前所在的資料夾無誤。
-
-語法檔（.R）中的資料路徑表示方式。"../" 表示的是「相對路徑中的上一層目錄」的意思。詳見3.1.1 (p.42-44)。若執行後所顯示的路徑不是現在這個資料夾，（1）請你再次點選此章節的.Rproj檔案。（2）或是 **點選設定工作路徑**：在RStudio右下角檔案總管區，切換到語法案所在資料夾；找到檔案總管區Files標籤工具列中的齒輪（More）圖示，點選"Set as Working Directory"）。 
+語法檔（.R）中的"../" 表示的是「相對路徑中的上一層目錄」的意思。詳見3.1.1 (p.42-44)。若執行後所顯示的路徑不是現在這個資料夾，（1）請你再次點選此章節的.Rproj檔案。（2）或是 **點選設定工作路徑**：在RStudio右下角檔案總管區，切換到語法案所在資料夾；找到檔案總管區Files標籤工具列中的齒輪（More）圖示，點選"Set as Working Directory"）。
 
 ## 聯絡  
 本書若有任何錯誤，或您有指正、建議，歡迎您聯絡: [csliu@mail.nsysu.edu.tw](csliu@mail.nsysu.edu.tw) 。
