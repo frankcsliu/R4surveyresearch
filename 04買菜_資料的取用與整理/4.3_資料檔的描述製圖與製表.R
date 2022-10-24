@@ -2,6 +2,10 @@
 ### 劉正山著．2018五南出版
 ### 4.3 資料檔的描述製圖與製表
 
+# 在正式操作前，用本資料夾中的章節專案檔（.Rproj）點開專案再正式開始練習
+# 請用此指令確認目前工作路徑是現在章節的資料夾
+here::here() 
+
 #安裝sjPlot套件家族
 install.packages("devtools") # 套件開發者工具箱
 devtools::install_github("strengejacke/strengejacke")
