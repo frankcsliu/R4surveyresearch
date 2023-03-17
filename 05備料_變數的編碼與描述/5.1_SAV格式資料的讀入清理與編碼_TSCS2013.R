@@ -52,15 +52,8 @@ tscs2013 <- set_na(tscs2013, na=c(93:99, "NA"))
 library(sjmisc) #編碼用
 library(sjPlot) #製圖用
 
-# 如果你是Mac使用者：可能會遇到在之後的圖片的標籤中文字變成方塊的狀況。這是你的電腦中R預設的語系，與RStudio預設的顯示語系不一致所造成的。有兩個方法讓圖片能正確顯示中文字體（：
-# 方法一：調整你目前顯示主題下的顯示字型
+# 如果你是Mac使用者：可能會遇到在之後的圖片的標籤中文字變成方塊的狀況。這是你的電腦中R預設的語系，與RStudio預設的顯示語系不一致所造成的。請用下一行調整你目前顯示主題下的顯示字型（「蘋方繁中」為mac的中文字體）：
 # set_theme(theme.font="PingFang TC") 
-
-## 方法二：讓R預設的語系，成為中文萬國碼（zh_TW.UTF-8），也而非傳統的大五碼（big5）。請你執行這一行（先把註記符號＃拿掉）。
-# Sys.setlocale("LC_ALL","zh_TW.UTF-8")
-
-# 這一行只在執行這個專案時有作用。如果你希望每次打開RStudio語系就是這個語系，請你先用這個指令，打開Rprifle檔案，把上面這一行放入空白處，存檔，再重啟RStudio。
-# file.edit(file.path("~", ".Rprofile")) # edit .Rprofile in HOME
 
 
 # 1、性別：
