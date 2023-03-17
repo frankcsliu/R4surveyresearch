@@ -2,17 +2,12 @@
 ### 劉正山著．2018五南出版
 ### 5.1 SAV格式調查資料的讀入、清理與編碼
 
-# 如果你是使用本資料夾中的專案檔（.Rproj）點開專案，
-# 請用此指令確認目前工作路徑
+## 確認你的工作路徑，是使用RStudio進行專案的起手勢。一定要會！
+
+# 如果你是使用本資料夾中的專案檔（.Rproj）點開專案，請用此指令確認目前工作路徑
 here::here()  #顯示專案（.Rproj）目前的路徑
 
-# 如果你的專案檔放在別的位置（例如放在上一層），那麼請在Files panel點選語法檔所在的正確的資料夾，再找到藍色齒輪，點下"Set As Working Directory"
-
-## 如果你使用mac電腦，可能會遇到在之後的圖片的標籤中文字變成方塊的狀況。這是你的電腦中R預設的語系，與RStudio預設的顯示語系不一致所造成的。最理想的，是讓R預設的語系，成為中文萬國碼（zh_TW.UTF-8），也而非傳統的大五碼（big5）。請你執行這一行（先把註記符號＃拿掉）。
-# Sys.setlocale("LC_ALL","zh_TW.UTF-8")
-
-# 這一行只在執行這個專案時有作用。如果你希望每次打開RStudio語系就是這個語系，請你先用這個指令，打開Rprifle檔案，把上面這一行放入空白處，存檔，再重啟RStudio。
-# file.edit(file.path("~", ".Rprofile")) # edit .Rprofile in HOME
+# 如果你的專案檔放在別的位置（例如放在上一層），那麼請在Files panel點選語法檔所在的正確的資料夾，再找到藍色齒輪，點下"Set As Working Directory"。建議每一次開啟任何專案，第一個動作就是做這件事。
 
 ##---------
 
@@ -55,7 +50,17 @@ tscs2013 <- set_na(tscs2013, na=c(93:99, "NA"))
 ## 第三階段：變數編碼
 library(sjmisc) #編碼用
 library(sjPlot) #製圖用
-# set_theme(theme.font="PingFang TC") # 給Mac使用者：用這一行讓圖片能正確顯示中文字體
+
+# 如果你是Mac使用者：可能會遇到在之後的圖片的標籤中文字變成方塊的狀況。這是你的電腦中R預設的語系，與RStudio預設的顯示語系不一致所造成的。有兩個方法讓圖片能正確顯示中文字體（：
+# 方法一：調整你目前顯示主題下的顯示字型
+# set_theme(theme.font="PingFang TC") 
+
+## 方法二：讓R預設的語系，成為中文萬國碼（zh_TW.UTF-8），也而非傳統的大五碼（big5）。請你執行這一行（先把註記符號＃拿掉）。
+# Sys.setlocale("LC_ALL","zh_TW.UTF-8")
+
+# 這一行只在執行這個專案時有作用。如果你希望每次打開RStudio語系就是這個語系，請你先用這個指令，打開Rprifle檔案，把上面這一行放入空白處，存檔，再重啟RStudio。
+# file.edit(file.path("~", ".Rprofile")) # edit .Rprofile in HOME
+
 
 # 1、性別：
 # (01)男      (02)女
