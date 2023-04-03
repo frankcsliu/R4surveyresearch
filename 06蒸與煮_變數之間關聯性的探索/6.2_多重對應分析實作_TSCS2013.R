@@ -22,6 +22,9 @@ here::here()
 # install.packages("FactoMineR")
 # install.packages("factoextra")
 
+# 如果你是Mac使用者：可能會遇到在之後的圖片的標籤中文字變成方塊的狀況。這是你的電腦中R預設的語系，與RStudio預設的顯示語系不一致所造成的。請用下一行調整你目前顯示主題下的顯示字型（「蘋方繁中」為mac的中文字體）：
+# sjPlot::set_theme(theme.font="PingFang TC") 
+
 ### 挑選變數
 library(dplyr)
 load("../tscs2013r.rda")

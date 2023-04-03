@@ -44,16 +44,12 @@ library(sjmisc)
 library(sjPlot)
 names(bbq)
 
+# 如果你是Mac使用者：可能會遇到在之後的圖片的標籤中文字變成方塊的狀況。這是你的電腦中R預設的語系，與RStudio預設的顯示語系不一致所造成的。請用下一行調整你目前顯示主題下的顯示字型（「蘋方繁中」為mac的中文字體）：
+# sjPlot::set_theme(theme.font="PingFang TC") 
+
 ## 依變數：「明年會不會烤肉」
 # （V44）說回到烤肉，請問您明年會不會想全家人一起烤肉？ (0~10)
 # table(bbq$V44)
-
-# !!!  注意：以下的「懶人上標籤法」目前只適用在mac電腦；
-# 使用Windows電腦時，需要將[ ]其中的字改為英文才能正常執行；
-# 建議Windows使用者，將[ ]及其中的字刪除再執行，
-#  或採用上述介紹的sjlabelled::setlabel() 
-# 以及sjlabelled::setlabels()來進行上變數標籤及選項標籤的動作
-# 參閱 5.3（p.126)
 
 bbq$V44r <- rec(bbq$V44, rec="0:5=0[不會]; 6:10=1[會]", as.num=F) 
 frq(bbq$V44)
