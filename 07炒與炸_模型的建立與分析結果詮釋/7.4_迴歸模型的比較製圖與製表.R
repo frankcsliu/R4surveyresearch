@@ -67,7 +67,7 @@ tab_model(md03,
         show.se = TRUE, # 顯示標準誤
         show.aic = TRUE, # 顯示AIC 
         show.r2 = TRUE, # 顯示 (pseudo) R-square
-        p.style="asterisk", # 以星號表示顯著程度
+        p.style="stars", # 以星號表示顯著程度
         collapse.ci = FALSE,  # 以獨立欄位顯示信賴區間
         
         # 設定小數點的位數
