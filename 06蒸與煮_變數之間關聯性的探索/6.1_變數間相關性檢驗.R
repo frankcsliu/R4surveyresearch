@@ -111,10 +111,8 @@ tab_corr(prestige,
          triangle = "lower" #只顯示下方的三角型
          )
 
-
-## 方法二：用crosstable來製作一對多的卡方檢定 （2025-11 新增）
+## 方法二：用crosstable來製作一對多的卡方檢定 
 library(crosstable) # 定義類別變數群組
-
 crosstable(
     Prestige,
     cols = c(education, income, women),
